@@ -240,13 +240,23 @@ const meetings = [
 
 const sortMeetingsByDay = (arr) => {
   function checkWeekDay(day1, day2) {
+
+    // array to reference order of weekdays
     let weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 
-    // if a comes before b in the week,
+    // iterating over weekdays
     for (let i = 0; i < weekdays.length; i++) {
+
+      // set current index equal to day1
       if (day1 === weekdays[i]) {
+
+        // iterate again over weekdays
         for (let j = 0; j < weekdays.length; j++) {
+
+          // set current index equal to day2
           if (day2 === weekdays[j]) {
+
+            // compare each index once days are referenced against array to check for the days' order
             if (i < j) {
               return -1;
             }
@@ -263,7 +273,9 @@ const sortMeetingsByDay = (arr) => {
   }
   // given a and b days of the week,
   arr.sort((a, b) => {
+    // do this function that checks:
     return checkWeekDay(a.dayOfWeek, b.dayOfWeek);
+    // if a comes before b in the week,
     // do not switch the items,
     // else if a comes after b in the week,
     // switch the items,
@@ -284,8 +296,79 @@ Sort the meetings in the order that they start. If two meetings start at the sam
 You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
+// function Meeting(dayOfWeek, start, end) {
+//   this.dayOfWeek = dayOfWeek;
+//   this.start = start;
+//   this.end = end;
+// }
+// const meetings = [
+//   new Meeting('Monday', '0900', '1000'),
+//   new Meeting('Wednesday', '1300', '1500'),
+//   new Meeting('Tuesday', '1145', '1315'),
+//   new Meeting('Wednesday', '0930', '1000'),
+//   new Meeting('Monday', '0900', '0945'),
+//   new Meeting('Friday', '1200', '1345'),
+// ];
+
 const sortSchedule = (arr) => {
-  // Solution code here...
+  function sortWeekDay(day1, day2) {
+
+    // array to reference order of weekdays
+    let weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+    // iterating over weekdays
+    for (let i = 0; i < weekdays.length; i++) {
+
+      // set current index equal to day1
+      if (day1 === weekdays[i]) {
+
+        // iterate again over weekdays
+        for (let j = 0; j < weekdays.length; j++) {
+
+          // set current index equal to day2
+          if (day2 === weekdays[j]) {
+
+            // compare each index once days are referenced against array to check for the days' order
+            if (i < j) {
+              return -1;
+            }
+            else if (i > j) {
+              return 1;
+            }
+            else {
+              return 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  function sortTiming(weekDaysSorted) {
+    weekDaysSorted.sort((a, b) => {
+      if (a.start < b.start) {
+        return -1;
+      } else if (a.start > b.start) {
+        return 1;
+      } else if (a.start === b.start) {
+        if ((a.end - a.start) < (b.end - b.start)) {
+          return -1;
+        } else if ((a.end - a.start) > (b.end - b.start)) {
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+    });
+  }
+
+  let sortedWeekDays = arr.sort((a, b) => {
+    return sortWeekDay(a.dayOfWeek, b.dayOfWeek);
+  });
+
+  arr = sortTiming(sortedWeekDays);
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
