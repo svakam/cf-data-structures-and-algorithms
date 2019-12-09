@@ -13,7 +13,12 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+  let regex = /\d/gm;
+  if (regex.test(input)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,26 +29,12 @@ Write a function named isCapitalized that takes in a string. This function shoul
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
-// describe('Testing challenge 2', () => {
-//   test('It should only return words that begin with a capital letter', () => {
-//     const capitalResult = isCapitalized('We only want to Return the Words that begin With a capital Letter');
-
-//     expect(capitalResult).toStrictEqual(['We', 'Return', 'Words', 'With', 'Letter']);
-//     expect(capitalResult.length).toStrictEqual(5);
-
-//     expect(isCapitalized('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toStrictEqual(['Given', 'Runnymede', 'Windsor', 'Staines', 'June', 'May']);
-
-//     expect(isCapitalized('these words are all failures')).toStrictEqual([]);
-//   });
-// });
-
 const isCapitalized = (str) => {
   let empty = [];
-  let regex = /[A-Z][a-z]*/gm;
+  let regex = /\b[A-Z]\w*\b/mg;
   if (str.match(regex) === null) {
     return empty;
-  }
-  else {
+  } else {
     return str.match(regex);
   }
 };
@@ -54,15 +45,30 @@ CHALLENGE 3
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
-const citiesAtoJ = (arr) => {
+// describe('Testing challenge 3', () => {
+//   let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
+//   test('It should return the cities whose names begin with the letters A through J', () => {
+//     expect(citiesAtoJ(cities)).toContain('Cleveland', 'Birmingham', 'Austin', 'Boston', 'Hoboken');
+//     expect(citiesAtoJ(cities).length).toStrictEqual(5);
+
+//     expect(citiesAtoJ([])).toStrictEqual([]);
+//     expect(citiesAtoJ(\));
+//   });
+
+//   test('It should not return the cities whose names begin with the letters K through Z', () => {
+//     expect(citiesAtoJ(cities)).not.toContain('San Diego', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Newport Beach');
+//   });
+// });
+
+const citiesAtoJ = (arr) => {
+  let newArr = [];
   arr.forEach((city) => {
-    city.
-      if() {
-      history;
+    let regex = /^[A-J]\w*/gm;
+    if (regex.test(city)) {
+      newArr.push(city);
     }
   });
-
   return newArr;
 };
 
@@ -78,8 +84,31 @@ If the user enters any of these four inputs, return true. For any other input, r
 Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
+// describe('Testing challenge 4', () => {
+//   test('It should match any of the acceptable inputs', () => {
+//     expect(matchMonth('Oct')).toBeTruthy();
+//     expect(matchMonth('oct')).toBeTruthy();
+//     expect(matchMonth('October')).toBeTruthy();
+//     expect(matchMonth('october')).toBeTruthy();
+//   });
+
+//   test('It should not match anything other than the acceptable inputs', () => {
+//     expect(matchMonth('November')).toBeFalsy();
+//     expect(matchMonth('nov')).toBeFalsy();
+//     expect(matchMonth(123)).toBeFalsy();
+//     expect(matchMonth('octob')).toBeFalsy();
+//     expect(matchMonth('OCTOBER')).toBeFalsy();
+//     expect(matchMonth('notOctober')).toBeFalsy();
+//   });
+// });
+
 const matchMonth = (input) => {
-  // Solution code here...
+  let regex = /^[Oo]ct(ober)*$/gm;
+  if (regex.test(input)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,7 +122,8 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  let regex = /\b\w*\s/gm;
+  return str.match(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,7 +139,8 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+  let regex = /[a,e,i,o,u]/gmi;
+  return str.replace(regex, '_');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,7 +170,7 @@ Run your tests from the console: jest challenges-04.solution.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return true if the input is a number', () => {
     expect(isNum(1234567890)).toBeTruthy();
     expect(isNum('12345')).toBeTruthy();
@@ -166,7 +197,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
@@ -182,7 +213,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should match any of the acceptable inputs', () => {
     expect(matchMonth('Oct')).toBeTruthy();
     expect(matchMonth('oct')).toBeTruthy();
@@ -200,7 +231,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia vel massa sed egestas. Nunc faucibus iaculis elit, a scelerisque enim condimentum sed. Aenean ac scelerisque sem, et pharetra diam.';
 
   test('It should only return words that are immediately followed by a space', () => {
@@ -214,7 +245,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   let startString = 'This is a regex challenge. We are trying to create a hangman phrase where all of the vowels are missing!';
 
   test('It should remove the vowels from the hangman string and replace them with underscores', () => {
