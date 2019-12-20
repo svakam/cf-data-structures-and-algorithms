@@ -269,7 +269,7 @@ DO NOT CHANGE any of the below code.
 Run your tests from the console: jest challenge-12.test.js
 
 ------------------------------------------------------------------------------------------------ */
-
+console.log('hello');
 
 describe('Testing challenge 1', () => {
   test('It should add the hourly totals array', () => {
