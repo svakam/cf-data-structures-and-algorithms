@@ -245,7 +245,6 @@ if temp = \n, add up all numbers before
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  console.log(str);
   let arr = (str.split('\n'));
   let sumArr = [];
   for (let i = 0; i < arr.length; i++) {
@@ -257,6 +256,7 @@ const excel = (str) => {
     }
     sumArr.push(subsum);
   }
+  return sumArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
