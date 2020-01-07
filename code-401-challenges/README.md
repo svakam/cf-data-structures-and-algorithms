@@ -1,3 +1,6 @@
+# Table of Contents
+- Reverse an Array
+
 # Reverse an Array
 This code challenge tests our ability to reverse an array using the newly introduced language of Java. 
 
