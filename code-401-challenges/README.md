@@ -1,6 +1,7 @@
 # Table of Contents
 - Reverse an array
 - Insert a value into the middle of an array (Shift array)
+- Array binary search
 
 # Reverse an Array
 This code challenge tests our ability to reverse an array using the newly introduced language of Java. 
@@ -25,3 +26,15 @@ The array's midpoint would need to be calculated. The midpoint would have to be 
 
 ## Solution
 [Whiteboard](./assets/array-shift.jpg)
+
+# Array binary search
+This challenge tests our knowledge on searching through an array for a value with a time complexity of O(log(n)). 
+
+## Challenge
+Given an array of integers and an integer, implement a function to take in that array and find whether the integer is in the array. If it is, return the index at which the integer is located at; if not, return -1. 
+
+## Approach & Efficiency
+Begin by finding an initial midpoint of the array as-is. If the integer is immediately found, return the index of the integer. If not, go into a while loop that attempts to find the integer. If the integer is smaller than the midpoint, calculate a new midpoint that is based on the left half of the existing array boundaries. If the integer is larger, calculate the midpoint for the right half. If integer is equal to new midpoint, return the index. If not, run the while loop again. 
+
+## Solution
+[Whiteboard](./assets/array-binary-search.jpg)
