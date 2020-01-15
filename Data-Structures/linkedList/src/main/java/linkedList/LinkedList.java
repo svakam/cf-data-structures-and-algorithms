@@ -54,4 +54,6 @@ public class LinkedList {
         stringOfValues += " NULL";
         return stringOfValues;
     }
+
+    
 }
