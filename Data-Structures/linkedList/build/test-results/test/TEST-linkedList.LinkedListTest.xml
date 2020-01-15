@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="linkedList.LinkedListTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-15T04:20:56" hostname="LAPTOP-MPAVF22C" time="0.001">
+<testsuite name="linkedList.LinkedListTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-15T04:24:36" hostname="LAPTOP-MPAVF22C" time="0.003">
   <properties/>
-  <testcase name="instantiateList" classname="linkedList.LinkedListTest" time="0.001"/>
+  <testcase name="testIncludes" classname="linkedList.LinkedListTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
