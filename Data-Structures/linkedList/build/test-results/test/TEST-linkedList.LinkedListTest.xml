@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="linkedList.LinkedListTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-16T20:20:57" hostname="LAPTOP-MPAVF22C" time="0.032">
+<testsuite name="linkedList.LinkedListTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-16T23:20:38" hostname="LAPTOP-MPAVF22C" time="0.026">
   <properties/>
-  <testcase name="testAppend" classname="linkedList.LinkedListTest" time="0.032"/>
-  <system-out><![CDATA[expected = { 1 } -> { 2 } -> { 5 } -> { 3 } ->  NULL
+  <testcase name="testInsertAfter" classname="linkedList.LinkedListTest" time="0.026"/>
+  <system-out><![CDATA[3
+expected = { 1 } -> { 2 } -> { 3 } -> { 5 } -> NULL
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

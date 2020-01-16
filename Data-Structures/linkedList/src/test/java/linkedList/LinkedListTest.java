@@ -48,5 +48,21 @@ public class LinkedListTest {
         System.out.println("expected = " + expected);
     }
 
-    
+    @Test public void testInsertBefore() {
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.insertBefore(3,5);
+        String expected = list.toString();
+        System.out.println("expected = " + expected);
+    }
+
+    @Test public void testInsertAfter() {
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.insertAfter(3,5);
+        String expected = list.toString();
+        System.out.println("expected = " + expected);
+    }
 }

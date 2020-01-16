@@ -51,7 +51,7 @@ public class LinkedList {
             current = current.next;
         }
         // concatenate NULL to string and return string
-        stringOfValues += " NULL";
+        stringOfValues += "NULL";
         return stringOfValues;
     }
 
@@ -72,4 +72,33 @@ public class LinkedList {
         }
     }
 
+    // insert before adds new node with given new value before specified node
+    public void insertBefore(int searchValue, int newValue) {
+        // search for node with value
+        current = head;
+        Node newNode = new Node(newValue);
+        while (current.next != null) {
+            if (current.next.value == searchValue) {
+                // set new node to node after current and current to new node
+                newNode.next = current.next;
+                current.next = newNode;
+                return;
+            }
+            current = current.next;
+        }
+    }
+
+    // insert after adds new node with given new value after specified node
+    public void insertAfter(int searchValue, int newValue) {
+        current = head;
+        Node newNode = new Node(newValue);
+        while (current != null) {
+            if (current.value == searchValue) {
+                newNode.next = current.next;
+                current.next = newNode;
+                return;
+            }
+            current = current.next;
+        }
+    }
 }
