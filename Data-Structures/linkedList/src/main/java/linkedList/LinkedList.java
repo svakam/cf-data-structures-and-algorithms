@@ -13,10 +13,10 @@ public class LinkedList {
         if (head == null) {
             head = newNode;
         } else {
-//            Node current = head;
+            Node current = head;
             newNode.next = head;
             head = newNode;
-//            current = head;
+            current = head;
         }
     }
 
@@ -55,5 +55,21 @@ public class LinkedList {
         return stringOfValues;
     }
 
-    
+    // append(value) adds a new node with a given value to the end of the list
+    public void append(int value) {
+        // start at head
+        current = head;
+        // new node
+        Node newNode = new Node(value);
+        if (head == null) {
+            head = newNode;
+        } else {
+            // while current node not null, if next is null, insert new node after current
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
+
 }

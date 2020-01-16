@@ -37,4 +37,16 @@ public class LinkedListTest {
         String actualString = list.toString();
         System.out.println("actualString = " + actualString);
     }
+
+    // test insertion at end of list
+    @Test public void testAppend() {
+        list.insert(5);
+        list.insert(2);
+        list.insert(1);
+        list.append(3);
+        String expected = list.toString();
+        System.out.println("expected = " + expected);
+    }
+
+    
 }
