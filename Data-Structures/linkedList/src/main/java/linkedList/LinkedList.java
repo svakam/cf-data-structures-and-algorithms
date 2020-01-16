@@ -13,10 +13,10 @@ public class LinkedList {
         if (head == null) {
             head = newNode;
         } else {
-//            Node current = head;
+            Node current = head;
             newNode.next = head;
             head = newNode;
-//            current = head;
+            current = head;
         }
     }
 
@@ -51,9 +51,54 @@ public class LinkedList {
             current = current.next;
         }
         // concatenate NULL to string and return string
-        stringOfValues += " NULL";
+        stringOfValues += "NULL";
         return stringOfValues;
     }
 
-    
+    // append(value) adds a new node with a given value to the end of the list
+    public void append(int value) {
+        // start at head
+        current = head;
+        // new node
+        Node newNode = new Node(value);
+        if (head == null) {
+            head = newNode;
+        } else {
+            // while current node not null, if next is null, insert new node after current
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
+
+    // insert before adds new node with given new value before specified node
+    public void insertBefore(int searchValue, int newValue) {
+        // search for node with value
+        current = head;
+        Node newNode = new Node(newValue);
+        while (current.next != null) {
+            if (current.next.value == searchValue) {
+                // set new node to node after current and current to new node
+                newNode.next = current.next;
+                current.next = newNode;
+                return;
+            }
+            current = current.next;
+        }
+    }
+
+    // insert after adds new node with given new value after specified node
+    public void insertAfter(int searchValue, int newValue) {
+        current = head;
+        Node newNode = new Node(newValue);
+        while (current != null) {
+            if (current.value == searchValue) {
+                newNode.next = current.next;
+                current.next = newNode;
+                return;
+            }
+            current = current.next;
+        }
+    }
 }
