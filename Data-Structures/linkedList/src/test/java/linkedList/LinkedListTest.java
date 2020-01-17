@@ -48,6 +48,7 @@ public class LinkedListTest {
         System.out.println("expected = " + expected);
     }
 
+    // test insertion before specified node
     @Test public void testInsertBefore() {
         list.append(1);
         list.append(2);
@@ -57,6 +58,7 @@ public class LinkedListTest {
         System.out.println("expected = " + expected);
     }
 
+    // test insertion after specified node
     @Test public void testInsertAfter() {
         list.append(1);
         list.append(2);

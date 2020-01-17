@@ -17,3 +17,6 @@ I just followed the notes on the linked list notes by Code Fellows. Then I attem
 - append() inserts a node at the end of the list. 
 - insertBefore() inserts a node before a specified node's value. 
 - insertAfter() inserts a node after a specified node's value. 
+
+## Solution
+- append, insert before, insert after ![1](../assets/ll-insertion(1).jpg) ![2](../assets/ll-insertion(2).jpg) ![3](../assets/ll-insertion(3).jpg)
