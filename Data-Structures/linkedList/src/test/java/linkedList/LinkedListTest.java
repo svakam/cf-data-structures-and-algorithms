@@ -67,4 +67,38 @@ public class LinkedListTest {
         String expected = list.toString();
         System.out.println("expected = " + expected);
     }
+
+    // test kth from end happy path
+    @Test public void testkthFromEndHappy() {
+        list.append(1);
+        list.append(5);
+        list.append(3);
+        System.out.println(list.kthFromEnd(2));
+    }
+
+    // test kth from end with list of length 1
+    @Test public void testkthFromEnd1() {
+        list.append(2);
+        System.out.println(list.kthFromEnd(1));
+    }
+
+    @Test public void testkthFromEndEqual() {
+        list.append(5);
+        list.append(10);
+        System.out.println(list.kthFromEnd(2));
+    }
+
+    @Test public void testkthFromEndGreater() {
+        list.append(99);
+        list.append(102);
+        list.append(1);
+        System.out.println(list.kthFromEnd(5));
+    }
+
+    @Test public void testkthFromEndNegative() {
+        list.append(220);
+        list.append(10);
+        list.append(34134);
+        System.out.println(list.kthFromEnd(-1));
+    }
 }

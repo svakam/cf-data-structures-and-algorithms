@@ -1,1 +1,2 @@
-5expected = { 1 } -> { 2 } -> { 5 } -> { 3 } -> NULL
+&error: list length is greater than k
+-1

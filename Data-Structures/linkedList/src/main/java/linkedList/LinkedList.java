@@ -101,4 +101,29 @@ public class LinkedList {
             current = current.next;
         }
     }
+
+    // insert given node k nodes from the end of the list
+    public int kthFromEnd(int k) {
+        current = head;
+        int selectedValue = current.value;
+        // get length of list
+        int lengthOfList = 0;
+        while (current != null) {
+            lengthOfList++;
+            current = current.next;
+        }
+
+        // reset current and traverse node k times from the end and get value of current node
+        current = head;
+        if (k <= lengthOfList && k > 0) {
+            for (int i = 0; i < lengthOfList - k; i++) {
+                current = current.next;
+            }
+            selectedValue = current.value;
+        } else {
+            System.out.println("Exception: could not run with current search value");
+            return -1;
+        }
+        return selectedValue;
+    }
 }
