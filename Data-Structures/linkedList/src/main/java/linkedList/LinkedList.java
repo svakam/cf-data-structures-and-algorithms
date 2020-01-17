@@ -77,7 +77,7 @@ public class LinkedList {
         // search for node with value
         current = head;
         Node newNode = new Node(newValue);
-        while (current.next != null) {
+        while (current != null) {
             if (current.next.value == searchValue) {
                 // set new node to node after current and current to new node
                 newNode.next = current.next;
