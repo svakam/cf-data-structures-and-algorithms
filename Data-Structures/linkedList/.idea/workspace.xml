@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/linkedList/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/linkedList/LinkedList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/linkedList/LinkedListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/linkedList/LinkedListTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/linkedList.LinkedListTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/linkedList.LinkedListTest.html" afterDir="false" />
@@ -86,27 +87,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RunManager" selected="Gradle.LinkedListTest.testkthFromEndGreater">
-    <configuration name="LinkedListTest.testInsertBefore" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;linkedList.LinkedListTest.testInsertBefore&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.LinkedListTest.testkthFromEnd1">
     <configuration name="LinkedListTest.testkthFromEnd1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -187,13 +168,33 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="LinkedListTest.testkthFromEndNegative" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;linkedList.LinkedListTest.testkthFromEndNegative&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LinkedListTest.testkthFromEndGreater" />
-        <item itemvalue="Gradle.LinkedListTest.testkthFromEndEqual" />
-        <item itemvalue="Gradle.LinkedListTest.testkthFromEndHappy" />
         <item itemvalue="Gradle.LinkedListTest.testkthFromEnd1" />
-        <item itemvalue="Gradle.LinkedListTest.testInsertBefore" />
+        <item itemvalue="Gradle.LinkedListTest.testkthFromEndEqual" />
+        <item itemvalue="Gradle.LinkedListTest.testkthFromEndGreater" />
+        <item itemvalue="Gradle.LinkedListTest.testkthFromEndNegative" />
+        <item itemvalue="Gradle.LinkedListTest.testkthFromEndHappy" />
       </list>
     </recent_temporary>
   </component>
@@ -223,22 +224,22 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1579234358007">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1579377139016">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1579234358007" />
-    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1579234358006">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1579377139016" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1579377139015">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1579234358006" />
-    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1579234358006">
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1579377139015" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1579377139015">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1579234358006" />
-    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1579234358007">
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1579377139015" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1579377139015">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1579234358007" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1579377139015" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1579213574209">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

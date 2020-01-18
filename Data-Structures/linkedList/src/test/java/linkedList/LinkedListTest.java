@@ -73,32 +73,32 @@ public class LinkedListTest {
         list.append(1);
         list.append(5);
         list.append(3);
-        System.out.println(list.kthFromEnd(2));
+        System.out.println("Happy path: " + list.kthFromEnd(2));
     }
 
     // test kth from end with list of length 1
     @Test public void testkthFromEnd1() {
         list.append(2);
-        System.out.println(list.kthFromEnd(1));
+        System.out.println("Length of 1: " + list.kthFromEnd(1));
     }
 
     @Test public void testkthFromEndEqual() {
         list.append(5);
         list.append(10);
-        System.out.println(list.kthFromEnd(2));
+        System.out.println("k = length: " + list.kthFromEnd(2));
     }
 
     @Test public void testkthFromEndGreater() {
         list.append(99);
         list.append(102);
         list.append(1);
-        System.out.println(list.kthFromEnd(5));
+        System.out.println("k > length: " + list.kthFromEnd(5));
     }
 
     @Test public void testkthFromEndNegative() {
         list.append(220);
         list.append(10);
         list.append(34134);
-        System.out.println(list.kthFromEnd(-1));
+        System.out.println("negative k: " + list.kthFromEnd(-1));
     }
 }

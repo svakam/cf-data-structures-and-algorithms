@@ -105,7 +105,7 @@ public class LinkedList {
     // insert given node k nodes from the end of the list
     public int kthFromEnd(int k) {
         current = head;
-        int selectedValue = current.value;
+        int selectedValue;
         // get length of list
         int lengthOfList = 0;
         while (current != null) {
