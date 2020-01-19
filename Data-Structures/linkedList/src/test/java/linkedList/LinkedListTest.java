@@ -101,4 +101,51 @@ public class LinkedListTest {
         list.append(34134);
         System.out.println("negative k: " + list.kthFromEnd(-1));
     }
+
+    // test happy path of merging LL: both LL same length
+    @Test public void testllmergeHappy() {
+        LinkedList ll1 = new LinkedList();
+        ll1.append(1);
+        ll1.append(2);
+        ll1.append(3);
+        LinkedList ll2 = new LinkedList();
+        ll2.append(4);
+        ll2.append(5);
+        ll2.append(6);
+        String expected = LinkedList.mergeLists(ll1, ll2).toString();
+        assertEquals("happy path (both ll same length)", "{ 1 } -> { 4 } -> { 2 } -> { 5 } -> { 3 } -> { 6 } -> NULL", expected);
+    }
+
+    // test one ll being longer than theo ther
+    @Test public void testllmergeDiffLength() {
+        LinkedList ll1 = new LinkedList();
+        ll1.append(10);
+        ll1.append(20);
+        ll1.append(30);
+        LinkedList ll2 = new LinkedList();
+        ll2.append(40);
+        String expected = LinkedList.mergeLists(ll1, ll2).toString();
+        assertEquals("if ll1 longer than ll2, expect: ", "{ 10 } -> { 40 } -> { 20 } -> { 30 } -> NULL", expected);
+        ll1 = new LinkedList();
+        ll1.append(10);
+        ll2 = new LinkedList();
+        ll2.append(50);
+        ll2.append(40);
+        ll2.append(30);
+        expected = LinkedList.mergeLists(ll1, ll2).toString();
+        assertEquals("if ll2 longer than ll1, expect: ", "{ 10 } -> { 50 } -> { 40 } -> { 30 } -> NULL", expected);
+    }
+    
+    // throw an error if a list is empty and print the other list if exists
+    @Test public void testllmergeEmpty() {
+        LinkedList ll1 = new LinkedList();
+        ll1.append(100);
+        ll1.append(200);
+        LinkedList ll2 = new LinkedList();
+        String expected = LinkedList.mergeLists(ll1, ll2).toString();
+        assertEquals("if one list was empty, throw an error and print the other list", "{ 100 } -> { 200 } -> NULL", expected);
+        ll1 = new LinkedList();
+        expected = LinkedList.mergeLists(ll1, ll2).toString();
+        assertEquals("if both lists are empty, throw error and print NULL", "NULL", expected);
+    }
 }
