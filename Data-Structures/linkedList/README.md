@@ -31,4 +31,23 @@ We are challenged to put our understanding of singly linked lists to the test. W
 - append, insert before, insert after ![1](../assets/ll-insertion(1).jpg) ![2](../assets/ll-insertion(2).jpg) ![3](../assets/ll-insertion(3).jpg)
 - kth from end ![4](../assets/ll-kthfromend.jpg)
 - merge two linked lists ![5](../assets/ll-merge.jpg)
-        
+
+# Stacks and Queues
+This is a data structure that operates on the same principles as a linked list - the difference being that stacks rely on tracking the most recently added node, and queues rely on tracking both the last and most recent node. 
+
+## Approach and Efficiency
+- For each method, I ensure that the trackers (front, rear, top, etc.) are referenced properly, and nodes being added/removed are kept track of as well. 
+- Efficiency of stack's push(), pop(), peek(), and isEmpty() are O(1) in time, because no matter how many nodes are in the list, it's only 1 operation per stack. 
+- Efficiency of queue's enqueue, dequeue, peek(), and isEmpty() are O(1) in time for the same reason per queue. 
+
+## API
+- Stack (First In, Last Out; Last In, First Out)
+  - push() adds a node to the top of the stack and resets the top to that node. 
+  - pop() removes a node from the top of the stack and resets the top to the node below. 
+  - peek() returns the value of the top node. 
+  - isEmpty() returns true if a stack is empty, and false if it's filled. 
+- Queue (First In, First Out; Last In, Last Out) 
+  - enqueue() adds a node to the front of the queue and resets the front to that node. 
+  - dequeue() removes a node from the front of the queue and resets the front to the node after. 
+  - peek() returns the value of the front node. 
+  - isEmpty() returns true if a queue is empty, and false if it's filled. 

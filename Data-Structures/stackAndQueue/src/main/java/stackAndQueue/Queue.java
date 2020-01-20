@@ -16,17 +16,20 @@ public class Queue {
     }
 
     // removes node from front of the queue
-//    public int dequeue() {
-//
-//    }
+    public int dequeue() {
+        Node temp = front;
+        front = front.next;
+        temp.next = null;
+        return temp.value;
+    }
 
     // returns node value in front of queue without removing it from queue
-//    public int peek() {
-//
-//    }
+    public int peek() {
+        return front.value;
+    }
 
-    //
-//    public boolean isEmpty() {
-//
-//    }
+    // return boolean for empty vs non empty queue
+    public boolean isEmpty() {
+        return front == null;
+    }
 }
