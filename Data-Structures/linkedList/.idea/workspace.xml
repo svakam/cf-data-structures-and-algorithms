@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97e93a15-c982-47aa-b935-d81bac4c9e76" name="Default Changelist" comment="" />
+    <list default="true" id="97e93a15-c982-47aa-b935-d81bac4c9e76" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stackAndQueue/src/main/java/stackAndQueue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../stackAndQueue/src/main/java/stackAndQueue/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stackAndQueue/src/test/java/stackAndQueue/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../stackAndQueue/src/test/java/stackAndQueue/QueueTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -233,10 +237,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1579383789132" />
-    <state x="465" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1579404412049">
+    <state x="465" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1579719315237">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="257" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1579404412049" />
+    <state x="465" y="257" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1579719315237" />
     <state x="425" y="197" key="run.anything.popup" timestamp="1579213607208">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
