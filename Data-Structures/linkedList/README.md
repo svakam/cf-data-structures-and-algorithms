@@ -33,12 +33,13 @@ We are challenged to put our understanding of singly linked lists to the test. W
 - merge two linked lists ![5](../assets/ll-merge.jpg)
 
 # Stacks and Queues
-This is a data structure that operates on the same principles as a linked list - the difference being that stacks rely on tracking the most recently added node, and queues rely on tracking both the last and most recent node. 
+These are data structures that operates on the same principles as a linked list - the difference being that stacks rely on tracking the most recently added node, and queues rely on tracking both the last and most recent node. Pseudoqueues operate like queues, but implement two stacks within its structure instead.
 
 ## Approach and Efficiency
 - For each method, I ensure that the trackers (front, rear, top, etc.) are referenced properly, and nodes being added/removed are kept track of as well. 
 - Efficiency of stack's push(), pop(), peek(), and isEmpty() are O(1) in time, because no matter how many nodes are in the list, it's only 1 operation per stack. 
 - Efficiency of queue's enqueue, dequeue, peek(), and isEmpty() are O(1) in time for the same reason per queue. 
+- Efficiency of pseudoqueue is O(1) in space because it utilizes the same two stacks for dequeueing or enqueueing, and O(n) in time, worst case assuming dequeueing has to occur while all nodes are in the enqueue stack, and vice versa. 
 
 ## API
 - Stack (First In, Last Out; Last In, First Out)
@@ -51,3 +52,9 @@ This is a data structure that operates on the same principles as a linked list -
   - dequeue() removes a node from the front of the queue and resets the front to the node after. 
   - peek() returns the value of the front node. 
   - isEmpty() returns true if a queue is empty, and false if it's filled. 
+- PseudoQueue
+  - enqueue() pushes a node to the enqueue stack if it's already filled. If enqueue stack is empty and dequeue stack is filled, it pop()'s off dequeue and push()'s to enqueue() until dequeue is emptied, then push()'s the newly added stack. 
+  - dequeue() follows the same process as enqueue(), except returns the value of the last enqueue()'d node. 
+
+## Solution for Pseudoqueue
+![6](../assets/pseudoqueue.jpg)
