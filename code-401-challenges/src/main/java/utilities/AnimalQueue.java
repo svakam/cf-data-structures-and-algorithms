@@ -1,25 +1,25 @@
-package code401challenges;
+package utilities;
 
 import java.util.NoSuchElementException;
 
-public class Queue {
-    Node front;
-    Node rear;
+public class AnimalQueue {
+    AnimalNode front;
+    AnimalNode rear;
 
     // adds new node to back of queue
     public void enqueue(int value) {
-        Node newNode = new Node(value);
+        AnimalNode newAnimalNode = new AnimalNode(value);
         if (front == null) {
-            front = newNode;
+            front = newAnimalNode;
         } else {
-            rear.next = newNode;
+            rear.next = newAnimalNode;
         }
-        rear = newNode;
+        rear = newAnimalNode;
     }
 
     // removes node from front of the queue
     public int dequeue() {
-        Node temp = front;
+        AnimalNode temp = front;
         if (front == null) {
             throw new NoSuchElementException("Cannot dequeue from an empty queue");
         }
