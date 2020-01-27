@@ -1,12 +1,12 @@
-package code401challenges;
+package utilities;
 
-public class Node {
+public class AnimalNode {
     // variables
     int value;
-    Node next;
+    AnimalNode next;
 
     // constructor
-    public Node(int value) {
+    public AnimalNode(int value) {
         this.value = value;
         this.next = null;
     }
