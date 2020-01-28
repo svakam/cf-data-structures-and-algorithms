@@ -1,5 +1,8 @@
 # Table of Contents
 - Linked List
+- Stack and Queue
+- Pseudoqueue
+- Tree
 
 # Singly Linked List
 This is a data structure that contains objects called nodes. These nodes contain a value and a single pointer to another node. 
@@ -58,3 +61,18 @@ These are data structures that operates on the same principles as a linked list 
 
 ## Solution for Pseudoqueue
 ![6](../assets/pseudoqueue.jpg)
+
+# Trees
+This data structure is hierarchical as opposed to other DSA covered so far, which are linear. 
+
+## Challenge
+A node on a tree can contain multiple pointers to other nodes. A node can be connected from another node by those pointers. The challenge is to create trees through add(), check if a tree contains() a node, and also traverse trees through preorder, inorder, and postorder methods that take in a specified root of the tree. 
+
+## Approach & Efficiency
+- Approach: Recursion is key in solving these problems. My approach was to identify what aspect of the tree needs to be recursed. For example, if you are adding a node and you'd like to traverse the tree to find where to add the node, if a node doesn't match what the search value of the input node is, and the current root's value is larger than the search value, go to the left and check the rest of the root. This works because subtrees exist within trees, and you can apply the same method on that subtree the same way you did on the original tree when starting out. 
+- Big O: for add() and contains(), the best case (assuming a balanced tree, which is a height difference of no more than 1 at any node's left vs. right) is O(log n). The worst case (assuming an unbalanced tree) is O(n) - all the nodes end up on the same side (left or right). 
+
+## API
+- preOrder() traverses a tree looking at the root first, then left, then right of every node. It returns a linked list of the nodes in the tree. 
+- inOrder() does the same, except through traversing by left first, then root, then right. 
+- postOrder() does the same, except through traversing by left first, then right, then root. 
