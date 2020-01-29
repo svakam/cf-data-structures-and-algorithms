@@ -38,3 +38,17 @@ Begin by finding an initial midpoint of the array as-is. If the integer is immed
 
 ## Solution
 [Whiteboard](./assets/array-binary-search.jpg)
+
+# Animal shelter
+This challenge tests our ability to queue objects using generics in Java. 
+
+# FizzBuzzTree
+This challenge tests our knowledge on traversing a tree appropriately and adding a new node to a new tree for every node on the original tree.
+
+## Challenge
+Given a tree, implement a function that takes in that tree. Examining the node of each tree, if the node is divisible by 3, add a new node to a new tree with the value of "fizz". If divisible by 5, add the node with the value of "buzz", else if divisible by 15, add the node with the value of "fizzbuzz", else stringify the original node's value. 
+
+## Approach & Efficiency
+
+## Solution
+[Whiteboard](./assets/fizzbuzz-tree.jpg)
