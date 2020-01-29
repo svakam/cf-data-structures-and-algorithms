@@ -61,7 +61,10 @@ public class Tree {
         Queue<Integer> queue = new LinkedList<>();
 
         // get tree
-        // pass in tree's root
-        //
+        // instantiate queue
+        // pass in tree's root to queue
+        // while queue not empty, dequeue node and store it in temp
+        // enqueue left and right child of dequeue node
+        // if node doesn't have children, dequeue without further enqueue
     }
 }

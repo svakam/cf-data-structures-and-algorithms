@@ -76,5 +76,17 @@ public class TreeTest {
     }
 
     // test breadthtraversal
-    @Test public 
+    @Test public void testBreadthFirst() {
+        expected.add(8);
+        expected.add(4);
+        expected.add(12);
+        expected.add(2);
+        expected.add(10);
+        expected.add(14);
+
+        String expectedArray = expected.toString();
+        String actualArray = test.breadthFirst(testTree).toString();
+
+        assertEquals(expectedArray, actualArray);
+    }
 }
