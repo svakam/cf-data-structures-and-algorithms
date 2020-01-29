@@ -76,3 +76,5 @@ A node on a tree can contain multiple pointers to other nodes. A node can be con
 - preOrder() traverses a tree looking at the root first, then left, then right of every node. It returns a linked list of the nodes in the tree. 
 - inOrder() does the same, except through traversing by left first, then root, then right. 
 - postOrder() does the same, except through traversing by left first, then right, then root. 
+- add() adds a node to a tree according to binary search tree convention (all values to the left of a node must be smaller and all values to the right must be larger). 
+- contains() returns a boolean if an input value is contained within a tree's node or not. 
