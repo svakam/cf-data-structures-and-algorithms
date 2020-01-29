@@ -7,3 +7,6 @@ Code Fellows Code Challenges 301/401
     - Code 301: code-challenges
   - Data structures (Code 401)
     - Linked List
+    - Stacks and Queues
+    - Pseudoqueue
+    - Trees
