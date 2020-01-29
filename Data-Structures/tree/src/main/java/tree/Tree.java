@@ -1,6 +1,8 @@
 package tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Tree {
 
@@ -50,5 +52,16 @@ public class Tree {
         valuesInTree.add(root.getValue());
 
         return valuesInTree;
+    }
+
+    public ArrayList<Integer> breadthFirst(Node root) {
+        ArrayList<Integer> valuesInTree = new ArrayList<>();
+
+        // instantiate queue
+        Queue<Integer> queue = new LinkedList<>();
+
+        // get tree
+        // pass in tree's root
+        //
     }
 }

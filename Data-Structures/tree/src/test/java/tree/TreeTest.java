@@ -74,4 +74,7 @@ public class TreeTest {
 
         assertEquals(expectedArray, actualArray);
     }
+
+    // test breadthtraversal
+    @Test public 
 }
