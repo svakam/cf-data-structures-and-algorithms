@@ -1,5 +1,6 @@
 package tree;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -55,16 +56,26 @@ public class Tree {
     }
 
     public ArrayList<Integer> breadthFirst(Node root) {
-        ArrayList<Integer> valuesInTree = new ArrayList<>();
+        Queue<Node> valuesInTree = new LinkedList<>();
+        ArrayList<Integer> answer = new ArrayList<>();
+        // if root on tree exists, enqueue it
+        if (root != null) {
+            valuesInTree.add(root);
+        }
+        // while queue is filled, dequeue the front and add it to answer list
+        while (!valuesInTree.isEmpty()) {
+            Node dequeued = valuesInTree.remove();
+//            System.out.println(dequeued);
+            answer.add(dequeued.getValue());
 
-        // instantiate queue
-        Queue<Integer> queue = new LinkedList<>();
-
-        // get tree
-        // instantiate queue
-        // pass in tree's root to queue
-        // while queue not empty, dequeue node and store it in temp
-        // enqueue left and right child of dequeue node
-        // if node doesn't have children, dequeue without further enqueue
+            // if dequeued's left exists, add the left value to queue, if root's right exists, add right value to queue
+            if (dequeued.getLeft() != null) {
+                valuesInTree.add(dequeued.getLeft());
+            }
+            if (dequeued.getRight() != null) {
+                valuesInTree.add(dequeued.getRight());
+            }
+        }
+        return answer;
     }
 }

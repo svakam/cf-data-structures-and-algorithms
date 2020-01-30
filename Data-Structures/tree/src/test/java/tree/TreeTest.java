@@ -15,20 +15,23 @@ public class TreeTest {
     //         /       /  \
     //        2       10   14
 
-    Node testTree;
-    // make a tree to test orders with
+    // initialize variables
+    Node testTreeRoot;
+    Tree test;
+    ArrayList<Integer> expected;
+
+    // instantiate test tree to test traversals on
     @Before public void setUp() {
-        testTree = new Node(8,
+        testTreeRoot = new Node(8,
                 new Node(4, new Node(2), null),
                 new Node(12, new Node(10),
                         new Node(14)
                 )
         );
+
+        test = new Tree();
+        expected = new ArrayList<>();
     }
-
-    Tree test = new Tree();
-
-    ArrayList<Integer> expected = new ArrayList<>();
 
     // test preorder
     @Test public void testPreOrder() {
@@ -40,7 +43,7 @@ public class TreeTest {
         expected.add(14);
 
         String expectedArray = expected.toString();
-        String actualArray = test.preOrder(testTree).toString();
+        String actualArray = test.preOrder(testTreeRoot).toString();
 
         assertEquals(expectedArray, actualArray);
     }
@@ -55,7 +58,7 @@ public class TreeTest {
         expected.add(14);
 
         String expectedArray = expected.toString();
-        String actualArray = test.inOrder(testTree).toString();
+        String actualArray = test.inOrder(testTreeRoot).toString();
 
         assertEquals(expectedArray, actualArray);
     }
@@ -70,7 +73,7 @@ public class TreeTest {
         expected.add(8);
 
         String expectedArray = expected.toString();
-        String actualArray = test.postOrder(testTree).toString();
+        String actualArray = test.postOrder(testTreeRoot).toString();
 
         assertEquals(expectedArray, actualArray);
     }
@@ -85,7 +88,7 @@ public class TreeTest {
         expected.add(14);
 
         String expectedArray = expected.toString();
-        String actualArray = test.breadthFirst(testTree).toString();
+        String actualArray = test.breadthFirst(testTreeRoot).toString();
 
         assertEquals(expectedArray, actualArray);
     }
