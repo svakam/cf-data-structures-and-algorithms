@@ -78,4 +78,29 @@ public class Tree {
         }
         return answer;
     }
+
+    public int findMaxValue(Node root) {
+        int maxValue = Integer.MIN_VALUE;
+        return findMaxValueHelper(root, maxValue);
+    }
+
+    private int findMaxValueHelper(Node root, int maxValue) {
+        if (root == null) {
+            return maxValue;
+        }
+        maxValue = root.getValue();
+        if (root.getLeft() != null) {
+            int leftSide = findMaxValueHelper(root.getLeft(), maxValue);
+            if (leftSide > maxValue) {
+                maxValue = leftSide;
+            }
+        }
+        if (root.getRight() != null) {
+            int rightSide = findMaxValueHelper(root.getRight(), maxValue);
+            if (rightSide > maxValue) {
+                maxValue = rightSide;
+            }
+        }
+        return maxValue;
+    }
 }

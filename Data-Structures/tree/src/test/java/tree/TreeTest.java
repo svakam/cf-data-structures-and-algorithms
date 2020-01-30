@@ -92,4 +92,23 @@ public class TreeTest {
 
         assertEquals(expectedArray, actualArray);
     }
+
+    // test max value return
+    @Test public void testMaxValue() {
+        int actualValue = test.findMaxValue(testTreeRoot);
+        assertEquals(14, actualValue);
+    }
+
+    // test max value return on negative values
+    @Test public void testMaxValueNegative() {
+        testTreeRoot = new Node(-100,
+                new Node(4, new Node(10000), null),
+                new Node(2, new Node(-120),
+                        new Node(14)
+                )
+        );
+        int actualValue = test.findMaxValue(testTreeRoot);
+
+        assertEquals(10000, actualValue);
+    }
 }
