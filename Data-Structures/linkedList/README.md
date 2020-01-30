@@ -66,14 +66,16 @@ These are data structures that operates on the same principles as a linked list 
 This data structure is hierarchical as opposed to other DSA covered so far, which are linear. 
 
 ## Challenge
-A node on a tree can contain multiple pointers to other nodes. A node can be connected from another node by those pointers. The challenge is to create trees through add(), check if a tree contains() a node, and also traverse trees through preorder, inorder, and postorder methods that take in a specified root of the tree. 
+A node on a tree can contain multiple pointers to other nodes. A node can be connected from another node by those pointers. The challenge is to create trees through add(), check if a tree contains() a node, and also traverse trees through preorder, inorder, and postorder methods that take in a specified root of the tree. Traversing breadth-first avoids recursion in order to prioritize values that are closer to the root. Getting the max value of a tree is another challenge that tests our knowledge of recursion. 
 
 ## Approach & Efficiency
 - Approach for depth-first traversal: Recursion is key in solving these problems. My approach was to identify what aspect of the tree needs to be recursed. For example, if you are adding a node and you'd like to traverse the tree to find where to add the node, if a node doesn't match what the search value of the input node is, and the current root's value is larger than the search value, go to the left and check the rest of the root. This works because subtrees exist within trees, and you can apply the same method on that subtree the same way you did on the original tree when starting out. 
 - Approach for breadth-first traversal: the key is realizing that all nodes must be traversed top-down. Using a queue, add the root of the tree to the queue. Dequeue the front of the queue which would be the current root reference, add it to an answer holder, and then enqueue the root's left and right nodes. While the queue is still filled, repeat this process. Return the final list. 
+- Approach for findMaxValue: understanding that recursion will be the most efficient solution for a binary tree is important. Traverse the tree on each root reference and store that value in a max value holder variable. Call another method that takes in the root's left and the max value, and again on the root's right and max value. If the returned value exceeds the current max value, save it to max value. If a current root is null, return the max value without recursing. 
 - Big O: for add() and contains(), the best case (assuming a balanced tree, which is a height difference of no more than 1 at any node's left vs. right) is O(log n). The worst case (assuming an unbalanced tree) is O(n) - all the nodes end up on the same side (left or right). 
 - Big O: for preOrder(), inOrder(), and postOrder(), O(n) because n nodes in the tree must all be traversed. O(n) additional space in order to return a list of n nodes. 
-- Big O: for breadthFirst(), O(n) time to traverse n nodes in tree and O(n) additional space because a new list is made of n nodes. 
+- Big O: for breadthFirst(), O(n) time to traverse n nodes in tree and O(n) additional space because a new list is made of n nodes.
+- Big O: for findMaxValue(), O(log n) time to traverse the tree recursively and O(1) additional space to store the maximum value.  
 
 ## API
 - preOrder() traverses a tree looking at the root first, then left, then right of every node. It returns a linked list of the nodes in the tree. 
@@ -82,6 +84,10 @@ A node on a tree can contain multiple pointers to other nodes. A node can be con
 - add() adds a node to a tree according to binary search tree convention (all values to the left of a node must be smaller and all values to the right must be larger). 
 - contains() returns a boolean if an input value is contained within a tree's node or not. 
 - breadthFirst() returns a list of the nodes in a tree that was traversed breadth-first as opposed to depth-first (preorder, inorder, postorder). 
+- findMaxValue() returns an integer of the maximum value in a tree that was traversed recursively. 
 
 ## Solution Breadth-First
 ![7](../assets/breadth-first.jpg)
+
+## Solution findMaxValue
+![8](../assets/find-maximum-binary-tree.jpg)
