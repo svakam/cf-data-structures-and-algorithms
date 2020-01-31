@@ -5,10 +5,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AnimalShelterTest {
+
+    // initialize
     AnimalShelter shelter;
     AnimalShelter.Dog d;
     AnimalShelter.Cat c;
 
+    // set up
     @Before
     public void setUp() {
         shelter = new AnimalShelter();
@@ -16,6 +19,7 @@ public class AnimalShelterTest {
         c = new AnimalShelter.Cat();
     }
 
+    // test enqueueing and check if size of queues matches expected
     @Test
     public void testEnqueue() {
         shelter.enqueue(d);
@@ -26,6 +30,7 @@ public class AnimalShelterTest {
         assertEquals(1, shelter.getCatList().size());
     }
 
+    // test dequeueing and check if returned type is the correct type
     @Test
     public void testDequeue() {
         shelter.enqueue(d);
