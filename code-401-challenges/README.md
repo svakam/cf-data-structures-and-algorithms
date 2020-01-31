@@ -46,13 +46,28 @@ This challenge tests our ability to queue/dequeue objects using generics in Java
 Given an animal object Cat or Dog, implement a function that enqueues animals to the shelter or dequeues an animal with the preferred animal type. 
 
 ## Approach & Efficiency
-I give credit to Michelle Ferreirae, who assisted me with this challenge. In an AnimalShelter class, initialize an empty static class for each Dog and Cat (these classes contain nothing since they have no definition). Initialize queue interfaces that implement linked lists, one for each type of animal. Instantiate the queues within a constructor. Define an overloaded enqueue method, which enqueues a dog into the dog list and a cat into cat list. Define dequeue method which returns the Dog or Cat if the input of dequeue was specified as such. If not, throw an exception that says must be a dog or cat. 
+- I give credit to Michelle Ferreirae, who assisted me with this challenge. In an AnimalShelter class, initialize an empty static class for each Dog and Cat (these classes contain nothing since they have no definition). Initialize queue interfaces that implement linked lists, one for each type of animal. Instantiate the queues within a constructor. Define an overloaded enqueue method, which enqueues a dog into the dog list and a cat into cat list. Define dequeue method which returns the Dog or Cat if the input of dequeue was specified as such. If not, throw an exception that says must be a dog or cat. 
+- Efficiency is O(1) time to enqueue() and dequeue() given that a new queue is instantiated for every type of object. Space is O(n) since n Dogs and Cats are being stored for every enqueue(). 
 
 ## Solution
 [Whiteboard](./assets/fifo-animal-shelter.jpg)
 
 [Whiteboard2](./assets/fifo-animal-shelter2.jpg)
 - (Emulated Michelle's code)
+
+# Multi bracket validation
+This tests our ability to recognize the optimal data structure to use when presented with a problem that requires string parsing. 
+
+## Challenge
+Given a String, implement a function that returns a boolean for whether brackets {}()[] are used according to proper conventions in the string.
+
+## Approach & Efficiency
+- I realized that for every type of bracket opened, it must have a closing bracket before another type of bracket is opened. However, the same type of bracket can be opened as many times as needed while following the first rule and as long as it's being closed at the right time. For every bracket opened, push it to a stack and look at the next character. If the next character matches to its correct closing bracket, pop the stack. If it doesn't and it's another type of opening bracket, return false. If it's an opening bracket of the same type, add it to the stack. Return true only if nothing is left in the stack. 
+- I consulted Michelle's code since her idea of storing the corresponding bracket types as key-values pairs in a hashmap circumvents the need to implement lengthy if-else statements that attempt to account for bracket matching. 
+- Efficiency is O(n) time since there are n characters in the string that must be parsed. Space is O(1) best case assuming there are no brackets in the string and O(n) for n brackets in string. 
+
+## Solution
+[Whiteboard](./assets/multi-bracket-validation.jpg)
 
 # FizzBuzzTree
 This challenge tests our knowledge on traversing a tree appropriately and adding a new node to a new tree for every node on the original tree.
