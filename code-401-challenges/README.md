@@ -40,7 +40,19 @@ Begin by finding an initial midpoint of the array as-is. If the integer is immed
 [Whiteboard](./assets/array-binary-search.jpg)
 
 # Animal shelter
-This challenge tests our ability to queue objects using generics in Java. 
+This challenge tests our ability to queue/dequeue objects using generics in Java. 
+
+## Challenge
+Given an animal object Cat or Dog, implement a function that enqueues animals to the shelter or dequeues an animal with the preferred animal type. 
+
+## Approach & Efficiency
+I give credit to Michelle Ferreirae, who assisted me with this challenge. In an AnimalShelter class, initialize an empty static class for each Dog and Cat (these classes contain nothing since they have no definition). Initialize queue interfaces that implement linked lists, one for each type of animal. Instantiate the queues within a constructor. Define an overloaded enqueue method, which enqueues a dog into the dog list and a cat into cat list. Define dequeue method which returns the Dog or Cat if the input of dequeue was specified as such. If not, throw an exception that says must be a dog or cat. 
+
+## Solution
+[Whiteboard](./assets/fifo-animal-shelter.jpg)
+
+[Whiteboard2](./assets/fifo-animal-shelter2.jpg)
+- (Emulated Michelle's code)
 
 # FizzBuzzTree
 This challenge tests our knowledge on traversing a tree appropriately and adding a new node to a new tree for every node on the original tree.
