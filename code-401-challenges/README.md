@@ -76,6 +76,7 @@ This challenge tests our knowledge on traversing a tree appropriately and adding
 Given a tree, implement a function that takes in that tree. Examining the node of each tree, if the node is divisible by 3, add a new node to a new tree with the value of "fizz". If divisible by 5, add the node with the value of "buzz", else if divisible by 15, add the node with the value of "fizzbuzz", else stringify the original node's value. 
 
 ## Approach & Efficiency
+I chose to recurse through the tree and 
 
 ## Solution
 [Whiteboard](./assets/fizzbuzz-tree.jpg)
