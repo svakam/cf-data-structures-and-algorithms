@@ -53,4 +53,11 @@ public class InsertionSortTest {
         int[] actual = insertionSort.insertion(nearlySortedArr);
         assertArrayEquals(expected, actual);
     }
+
+    // fail case, empty array
+    @Test (expected = ArrayIndexOutOfBoundsException.class)
+    public void testNullArr() {
+        int[] nullArr = {};
+        assertEquals("Array is empty", insertionSort.insertion(nullArr));
+    }
 }
