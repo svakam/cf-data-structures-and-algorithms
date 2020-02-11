@@ -1,13 +1,13 @@
 package utilities;
 
 public class TreeNode {
-    private int value;
-    private TreeNode left;
-    private TreeNode right;
-    private String string;
+    int value;
+    TreeNode left;
+    TreeNode right;
+    String string;
 
     public TreeNode() {
-        this.string = string;
+        this.string = null;
         this.left = null;
         this.right = null;
     }
@@ -41,6 +41,8 @@ public class TreeNode {
     public void setValue(int value) {
         this.value = value;
     }
+
+    public void setString(String string) {this.string = string; }
 
     public void setLeft(TreeNode left) {
         this.left = left;
