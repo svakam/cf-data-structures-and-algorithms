@@ -4,12 +4,15 @@ import java.util.ArrayList;
 
 public class Tree {
 
+    // initialize tree node root
     TreeNode root;
 
+    // empty constructor where root is null
     public Tree() {
         this.root = null;
     }
 
+    // constructor with root passed in
     public Tree(TreeNode root) {
         this.root = root;
     }
