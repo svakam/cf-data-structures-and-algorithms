@@ -37,7 +37,7 @@ ALGORITHM Swap(arr, i low)
 ```
 
 ## Trace
-
+Progress
 
 
 Sample array: `[8,4,23,42,16,15]`
