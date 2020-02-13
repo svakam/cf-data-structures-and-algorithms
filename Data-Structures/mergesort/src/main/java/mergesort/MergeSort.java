@@ -1,27 +1,31 @@
 package mergesort;
 
+import java.util.Arrays;
+
 public class MergeSort {
-    public int[] mergeSort(int[] arr) {
-        int[] mainMerged = new int[arr.length];
+    public void mergeSort(int[] arr) {
+        if (arr.length == 0) {
+            throw new ArrayIndexOutOfBoundsException("Array is empty");
+        }
+
         int n = arr.length;
 
         if (n > 1) {
             int mid = n / 2;
-            int[] left = new int[mid];
-            int[] right = new int[n - mid];
+            int[] left = Arrays.copyOfRange(arr, 0, mid);
+            int[] right = Arrays.copyOfRange(arr, mid, n);
 
             // sort left
-            left = mergeSort(left);
+            mergeSort(left);
             // sort right
-            right = mergeSort(right);
+            mergeSort(right);
 
             // merge sorted left and right together
-            mainMerged = mainMerge(left, right, arr);
+            mainMerge(left, right, arr);
         }
-        return mainMerged;
     }
 
-    public int[] mainMerge(int[] left, int[] right, int[] arr) {
+    public void mainMerge(int[] left, int[] right, int[] arr) {
         int i = 0;
         int j = 0;
         int k = 0;
@@ -40,19 +44,17 @@ public class MergeSort {
 
         // if left has been iterated fully, set parent arr values to remaining values in right, else parent arr values to remaining left
         if (i == left.length) {
-            while (k != (arr.length - 1)) {
+            while (k < arr.length) {
                 arr[k] = right[j];
                 k++;
                 j++;
             }
         } else {
-            while (k != (arr.length - 1)) {
+            while (k < arr.length) {
                 arr[k] = left[i];
                 k++;
                 i++;
             }
         }
-
-        return arr;
     }
 }
