@@ -16,7 +16,7 @@ ALGORITHM QuickSort(arr, left, right)
 ALGORITHM Partition(arr, left, right)
     // set a pivot value as a point of reference
     DEFINE pivot <-- arr[right]
-    // create variable tot rack largest inex of numbers lower than defined pivot
+    // create variable to track largest index of numbers lower than defined pivot
     DEFINE low <-- left - 1
     for i <- left to right do
         if arr[i] <= pivot
@@ -40,7 +40,7 @@ ALGORITHM Swap(arr, i low)
 
 
 
-Sample array: `8,4,23,42,16,15`
+Sample array: `[8,4,23,42,16,15]`
 
 ## Efficiency
 - Time: 
