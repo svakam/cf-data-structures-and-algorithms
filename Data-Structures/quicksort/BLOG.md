@@ -1,6 +1,6 @@
 # Quick Sort
 
-This sorting algorithm 
+This sorting algorithm picks a 
 
 ## Pseudocode
 ```aidl
@@ -29,7 +29,7 @@ ALGORITHM Partition(arr, left, right)
     // return pivot index point
     return low + 1
 
-ALGORITHM Swap(arr, i low)
+ALGORITHM Swap(arr, i, low)
     DEFINE temp;
     temp <-- arr[i]
     arr[i] <-- arr[low]
@@ -37,7 +37,7 @@ ALGORITHM Swap(arr, i low)
 ```
 
 ## Trace
-
+Progress
 
 
 Sample array: `[8,4,23,42,16,15]`
