@@ -25,6 +25,10 @@ public class HashTable {
 
         // get beginning of list for given key
         Entry head = map.get(hash);
+        if (head.getKey().equals(key)) {
+            head.setValue(value);
+        }
+
         System.out.println("head = " + head);
     }
 
