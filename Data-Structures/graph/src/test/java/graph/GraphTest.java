@@ -6,9 +6,9 @@ package graph;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class LibraryTest {
+public class GraphTest {
     @Test public void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
+        Graph classUnderTest = new Graph();
         assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
     }
 }
