@@ -3,6 +3,7 @@
  */
 package graph;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;
@@ -10,9 +11,6 @@ import java.util.Set;
 public class Graph<T> {
 
     private ArrayList<GraphNode<Integer>> listOfNodes = new ArrayList<>();
-    public ArrayList<GraphNode<Integer>> getListOfNodes() {
-        return listOfNodes;
-    }
 
     // adds new node to graph, takes in value of node, returns added node
     public GraphNode<Integer> addNode(int value) {
@@ -37,8 +35,12 @@ public class Graph<T> {
     }
 
     // return all nodes in graph as collection
-    public String getNodes() {
-        return Arrays.toString(listOfNodes.toArray());
+    public ArrayList<Integer> getNodes() {
+        ArrayList<Integer> nodes = new ArrayList<>();
+        for (GraphNode<Integer> node : listOfNodes) {
+            nodes.add(node.value);
+        }
+        return nodes;
     }
 
     // return collection of all nodes connected to given node, including weight of connection in returned collection

@@ -1,5 +1,6 @@
 package graph;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -9,11 +10,11 @@ public class GraphNode<T> {
 
     public GraphNode(T value) {
         this.value = value;
-        this.neighbors = null;
+        this.neighbors = new HashSet<>();
     }
 
     public GraphNode(T value, Set<Edge<T>> neighbors) {
         this.value = value;
-        this.neighbors = neighbors;
+        this.neighbors = new HashSet<>();
     }
 }
