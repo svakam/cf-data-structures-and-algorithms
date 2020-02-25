@@ -3,12 +3,42 @@
  */
 package graph;
 
+import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class GraphTest {
-    @Test public void testSomeLibraryMethod() {
-        Graph classUnderTest = new Graph();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+    @Test
+    public void testInstantiate() {
+        Graph<Integer> oneTwo = new Graph<>();
+    }
+
+    Graph<Integer> oneTwo;
+
+    @Before
+    public void setUp() {
+        oneTwo = new Graph<>();
+    }
+
+    @Test
+    public void testSizeOnEmpty() {
+        assertEquals(0, oneTwo.size());
+    }
+
+    @Test
+    public void testAddNodeAndSize() {
+        oneTwo.addNode(1);
+        oneTwo.addNode(2);
+        assertEquals(2, oneTwo.size());
+    }
+
+    @Test
+    public void testAddEdge() {
+        oneTwo.addNode(1);
+        oneTwo.addNode(2);
+        ArrayList<GraphNode<Integer>> listOfNodes = oneTwo.getListOfNodes();
     }
 }

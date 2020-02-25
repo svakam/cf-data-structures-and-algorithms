@@ -3,38 +3,55 @@
  */
 package graph;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Set;
 
-public class Graph {
+public class Graph<T> {
+
+    private ArrayList<GraphNode<Integer>> listOfNodes = new ArrayList<>();
+    public ArrayList<GraphNode<Integer>> getListOfNodes() {
+        return listOfNodes;
+    }
 
     // adds new node to graph, takes in value of node, returns added node
     public GraphNode<Integer> addNode(int value) {
         GraphNode<Integer> newNode = new GraphNode<>(value);
-        if (size() == 0) {
-            return newNode;
-        } else {
-
-        }
+        listOfNodes.add(newNode);
+        return newNode;
     }
 
     // adds new edge between two nodes in graph, include ability to have weight, take in two nodes to be connected, both nodes already in graph
     public void addEdge(GraphNode<Integer> N1, GraphNode<Integer> N2, Integer weight) {
-        Edge<Integer> newEdge = new Edge<>(weight, N2);
-        
+        if (N1 == null || N2 == null) {
+            throw new NullPointerException("One or both nodes are missing");
+        }
+        if (weight < 1) {
+            throw new IllegalArgumentException("Weight must be 1 or greater");
+        } else {
+            Edge<Integer> newEdge = new Edge<>(weight, N2);
+            Edge<Integer> newEdge2 = new Edge<>(weight, N1);
+            N1.neighbors.add(newEdge);
+            N2.neighbors.add(newEdge2);
+        }
     }
 
     // return all nodes in graph as collection
-    public Set<GraphNode<Integer>> getNodes() {
-        return ;
+    public String getNodes() {
+        return Arrays.toString(listOfNodes.toArray());
     }
 
     // return collection of all nodes connected to given node, including weight of connection in returned collection
-    public Set<GraphNode<Integer>> getNeighbors(GraphNode<Integer> existingNode) {
-        return ;
+    public Set<Edge<Integer>> getNeighbors(GraphNode<Integer> existingNode) {
+        return existingNode.neighbors;
     }
 
     // return total number of nodes in graph
     public int size() {
-        return ;
+        int size = 0;
+        for (GraphNode<Integer> node : listOfNodes) {
+            size++;
+        }
+        return size;
     }
 }
