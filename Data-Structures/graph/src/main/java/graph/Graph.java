@@ -4,9 +4,7 @@
 package graph;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Set;
+import java.util.*;
 
 public class Graph<T> {
 
@@ -55,5 +53,24 @@ public class Graph<T> {
             size++;
         }
         return size;
+    }
+
+    public ArrayList<Integer> BFT(GraphNode<Integer> start) {
+        Queue<Integer> queue = new LinkedList<>();
+        ArrayList<Integer> BFT = new ArrayList<>();
+        ArrayList<Integer> nodesSeen = new ArrayList<>();
+        GraphNode<Integer> temp = new GraphNode<>();
+        queue.add(start.value);
+        nodesSeen.add(start.value);
+        while (queue.poll() != null) {
+            for (neighbor: queue.poll().neighbors()) {
+                if (!nodesSeen.contains(queue.peek().neighbors.get(queue.poll()))) {
+                    queue.add(queue.peek().neighbors.get(queue.poll()));
+                }
+            }
+            temp = queue.remove();
+            BFT.add(temp);
+        }
+        return BFT;
     }
 }
