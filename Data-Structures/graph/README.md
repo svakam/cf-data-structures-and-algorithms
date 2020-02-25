@@ -27,3 +27,6 @@ getNeighbors(): return the collection of neighbors for a given node. O(n) time w
 O(n) space for the array made to contain the nodes and weights of the edges. 
 
 size(): iterate through the list of nodes in the graph to get the size O(n) time and O(n) space for containing those nodes in a list. 
+
+## Solution BFT
+![BFT](../assets/bftgraph.jpg)
