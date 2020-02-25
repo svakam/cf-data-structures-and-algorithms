@@ -12,6 +12,8 @@ getNeighbors(): return collection of all nodes connected to given node, includin
 
 size(): return size of the graph (number of nodes that exist in it). 
 
+BFT(): given a node in the graph, traverse through its neighbors and return a list of nodes traversed breadth-first. 
+
 ## Approach & Efficiency
 addNode(): Instantiate a node given a value, add it to a pre-instantiated list of nodes in a graph, and return that node. O(1) time and O(n) space for every node added. 
 
@@ -20,13 +22,19 @@ must contain a weight and the node it will connect to. Also use the second node 
 are technically two edges with how I implemented this, but it's a way to satisfy the requirements for a standard bidirectional graph. O(1) time
 for a set of two nodes and O(n) space for the new edges and weight of each created. 
 
-getNodes(): for every node in the list of nodes, get its value and add it to an arraylist to return it. O(n) time to iterate through each node
+getNodes(): For every node in the list of nodes, get its value and add it to an arraylist to return it. O(n) time to iterate through each node
 to add to arraylist and O(n) space for the arraylist created. 
 
-getNeighbors(): return the collection of neighbors for a given node. O(n) time worst case assuming the node is connected to every other node in the graph. 
+getNeighbors(): Return the collection of neighbors for a given node. O(n) time worst case assuming the node is connected to every other node in the graph. 
 O(n) space for the array made to contain the nodes and weights of the edges. 
 
-size(): iterate through the list of nodes in the graph to get the size O(n) time and O(n) space for containing those nodes in a list. 
+size(): Iterate through the list of nodes in the graph to get the size O(n) time and O(n) space for containing those nodes in a list. 
+
+BFT(): Instantiate a queue to keep track of what nodes to traverse next. Instantiate an arraylist to keep track of the nodes traversed. Also 
+instantiate an arraylist to keep track of all the nodes seen so far to avoid traversing in a direction already passed. Add the start node to the queue. 
+Then add it to the list of seen nodes. While a front node in the queue exists, enqueue its neighbors and then add the neighbors to the list 
+of seen. Dequeue the front node, set it to a temp, and add its value to the arraylist of traversed nodes. It takes O(n) time to traverse n neighbors
+of the start node. It takes O(n) space worst case to store the neighbors of the start node if all nodes in the graph are connected to start. 
 
 ## Solution BFT
 ![BFT](../assets/bftgraph.jpg)
