@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -83,5 +84,61 @@ public class GraphTest {
             nodeAndWeightActual[1] = neighbor.weight;
         }
         assertArrayEquals(nodeAndWeightExpected, nodeAndWeightActual);
+    }
+
+    @Test
+    public void testBFT() {
+        GraphNode<Integer> A = oneTwo.addNode(1);
+        GraphNode<Integer> B = oneTwo.addNode(2);
+        GraphNode<Integer> C = oneTwo.addNode(3);
+        GraphNode<Integer> D = oneTwo.addNode(4);
+        GraphNode<Integer> E = oneTwo.addNode(5);
+        GraphNode<Integer> F = oneTwo.addNode(6);
+        oneTwo.addEdge(A, B, 1);
+        oneTwo.addEdge(B, C, 1);
+        oneTwo.addEdge(B, D, 1);
+        oneTwo.addEdge(C, D, 1);
+        oneTwo.addEdge(C, E, 1);
+        oneTwo.addEdge(C, F, 1);
+        oneTwo.addEdge(E, F, 1);
+        oneTwo.addEdge(D, F, 1);
+        ArrayList<ArrayList<Integer>> arrayOfExpecteds = new ArrayList<>();
+        ArrayList<Integer> expectedOne = new ArrayList<>();
+        ArrayList<Integer> expectedTwo = new ArrayList<>();
+        ArrayList<Integer> expectedThree = new ArrayList<>();
+        ArrayList<Integer> expectedFour = new ArrayList<>();
+        expectedOne.add(1);
+        expectedOne.add(2);
+        expectedOne.add(4);
+        expectedOne.add(3);
+        expectedOne.add(6);
+        expectedOne.add(5);
+        expectedTwo.add(1);
+        expectedTwo.add(2);
+        expectedTwo.add(3);
+        expectedTwo.add(4);
+        expectedTwo.add(5);
+        expectedTwo.add(6);
+        expectedThree.add(1);
+        expectedThree.add(2);
+        expectedThree.add(3);
+        expectedThree.add(4);
+        expectedThree.add(6);
+        expectedThree.add(5);
+        expectedFour.add(1);
+        expectedFour.add(2);
+        expectedFour.add(4);
+        expectedFour.add(3);
+        expectedFour.add(5);
+        expectedFour.add(6);
+        arrayOfExpecteds.add(expectedOne);
+        arrayOfExpecteds.add(expectedTwo);
+        arrayOfExpecteds.add(expectedThree);
+        arrayOfExpecteds.add(expectedFour);
+        for (ArrayList<Integer> expected : arrayOfExpecteds) {
+            if (expected.equals(oneTwo.BFT(A))) {
+                assertEquals(expected, oneTwo.BFT(A));
+            }
+        }
     }
 }

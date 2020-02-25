@@ -4,9 +4,7 @@
 package graph;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Set;
+import java.util.*;
 
 public class Graph<T> {
 
@@ -55,5 +53,35 @@ public class Graph<T> {
             size++;
         }
         return size;
+    }
+
+    public ArrayList<Integer> BFT(GraphNode<Integer> start) {
+        Queue<GraphNode<Integer>> queue = new LinkedList<>();
+        ArrayList<Integer> BFT = new ArrayList<>();
+        ArrayList<GraphNode<Integer>> nodesSeen = new ArrayList<>();
+        GraphNode<Integer> temp;
+        queue.add(start);
+        nodesSeen.add(start);
+
+        // while all nodes haven't been traversed
+        while (queue.peek() != null) {
+
+            // if current front node does not exist in list of already seen nodes
+            for (Edge<Integer> neighbor : queue.peek().neighbors) {
+                if (!nodesSeen.contains(neighbor.next)) {
+
+                    // add the front's neighbors to the queue and then to list of seen
+                    queue.add(neighbor.next);
+                    nodesSeen.add(neighbor.next);
+                }
+            }
+
+            // dequeue node and set it to temp
+            temp = queue.remove();
+
+            // add temp to list of traversed
+            BFT.add(temp.value);
+        }
+        return BFT;
     }
 }
