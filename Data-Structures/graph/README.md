@@ -1,5 +1,5 @@
 # Graph implementation
-Implement a graph's methods (addNode, addEdge, getNodes, getNeighbors, size). 
+Implement a graph's methods (addNode, addEdge, getNodes, getNeighbors, size, BFT, depthFirst). 
 
 ## Challenge Description
 addNode(): adds new node to graph, takes in value of node, returns added node. 
@@ -13,6 +13,8 @@ getNeighbors(): return collection of all nodes connected to given node, includin
 size(): return size of the graph (number of nodes that exist in it). 
 
 BFT(): given a node in the graph, traverse through its neighbors and return a list of nodes traversed breadth-first. 
+
+depthFirst(): traverse depth-first pre-order-wise a graph. 
 
 ## Approach & Efficiency
 addNode(): Instantiate a node given a value, add it to a pre-instantiated list of nodes in a graph, and return that node. O(1) time and O(n) space for every node added. 
@@ -35,6 +37,10 @@ instantiate an arraylist to keep track of all the nodes seen so far to avoid tra
 Then add it to the list of seen nodes. While a front node in the queue exists, enqueue its neighbors and then add the neighbors to the list 
 of seen. Dequeue the front node, set it to a temp, and add its value to the arraylist of traversed nodes. It takes O(n) time to traverse n neighbors
 of the start node. It takes O(n) space worst case to store the neighbors of the start node if all nodes in the graph are connected to start. 
+
+depthFirst(): Create a function that accepts an adjacency list as a graph, and conducts a depth first traversal. Without utilizing any of 
+the built-in methods available to your language, return a collection of nodes in their pre-order depth-first traversal order. It takes O(n) 
+time to traverse depth-first. It takes an order of O(n) space to make a list of nodes not yet seen. 
 
 ## Solution BFT
 ![BFT](../assets/bftgraph.jpg)
